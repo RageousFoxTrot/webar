@@ -7,7 +7,7 @@ import PageRouter from './routers/PageRouter.js';
 
 const app = express();
 
-app.use([ cors({ exposedHeaders: false, origin: process.env.HOST || '127.0.0.1', credentials: true }), helmet(), urlencoded({ extended: false }), json() ]);
+app.use([ cors({ exposedHeaders: false }), helmet(), urlencoded({ extended: false }), json() ]);
 
 app.use('*', (req, res, next) => {
     res.removeHeader('X-Powered-By');
@@ -25,5 +25,5 @@ app.use('*', (req, res) => {
     res.status(403).send('<h1>403 FORBIDDEN</h1>');
 });
 
-let port = 8080, host = 'localhost';
-app.listen(port, host, () => console.log(`Server running @${host}:${port}`));
+let port = process.env.PORT || 8080;
+app.listen(port, host, () => console.log(`Server running...`));
