@@ -26,5 +26,5 @@ app.use('*', (req, res) => {
 });
 
 let port = process.env.PORT || 80;
-app.listen(port, '192.168.1.66', () => console.log(`Server running...`));
+app.listen(port, () => console.log(`Server running...`));
 console.log();
