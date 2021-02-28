@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
             video.srcObject = stream;
             video.addEventListener('loadedmetadata', () => video.play());
         })
-        .catch(err => document.write(err));
+        .catch(err => video.innerHTML = "<h1>Please use a device with a camera.</h1>");
     } else {
         
     }
