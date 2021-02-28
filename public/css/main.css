@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
-h1 {
-    color: red;
+video {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }

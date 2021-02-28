@@ -25,5 +25,6 @@ app.use('*', (req, res) => {
     res.status(403).send('<h1>403 FORBIDDEN</h1>');
 });
 
-let port = process.env.PORT || 8080;
-app.listen(port, () => console.log(`Server running...`));
+let port = process.env.PORT || 80;
+app.listen(port, '192.168.1.66', () => console.log(`Server running...`));
+console.log();
