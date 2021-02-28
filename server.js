@@ -13,13 +13,13 @@ app.use('*', (req, res, next) => {
     res.removeHeader('X-Powered-By');
     res.setHeader('X-Appname', 'WebAR-Testing');
 
-    console.log(`(${req.ip}) [${req.method}] ${req.path}`);
+    console.log(`(${req.ip}) [${req.method}] ${req.originalUrl}`);
 
     next();
 });
 
 app.use('/', PageRouter);
-app.use('/', express.static('public'));
+app.use(express.static('public'));
 
 app.use('*', (req, res) => {
     res.status(403).send('<h1>403 FORBIDDEN</h1>');
