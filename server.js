@@ -1,13 +1,12 @@
 import express from 'express';
 import { urlencoded, json } from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
 
 import PageRouter from './routers/PageRouter.js';
 
 const app = express();
 
-app.use([ cors({ exposedHeaders: false }), helmet(), urlencoded({ extended: false }), json() ]);
+app.use([ urlencoded({ extended: false }), json() ]);
 
 app.use('*', (req, res, next) => {
     res.removeHeader('X-Powered-By');
